@@ -1,27 +1,28 @@
 # --- [za_settings.txt] ( https://github.com/S-pegin/---/files/9946323/za_settings.txt )
+
 ￼
 เ
 >
- 
-Search…
 
-:fip: Auto insurance "
+
+
+
 
 "For handling zigbee lights
 #zigbee_registration_backup.js"
 /////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Set Initial Variables \\
-var fs = require('fs');// File system library
-var zmq = require('zeromq');// Asynchronous Messaging Framework
-var matrix_io = require('matrix-protos').matrix_io;// Protocol Buffers for MATRIX function
+var fs = reqire('fs');// เชื่อมโยงระบบกลุ่ม
+var zmq = ต้องการ ('zeromq'); // กรอบการส่งข้อความแบบอะซิงโครนัส
+var matrix_io = ต้องการ ('matrix-protos').matrix_io; // Protocol Buffers สำหรับฟังก์ชัน MATRIX
 var matrix_ip = '127.0.0.1';// Local IP
 var matrix_zigbee_base_port = 40001;// Port for Zigbee driver
 var networkCommands = matrix_io.malos.v1.comm.ZigBeeMsg.NetworkMgmtCmd.NetworkMgmtCmdTypes;// Network Command Types
 var networkStatuses = matrix_io.malos.v1.comm.ZigBeeMsg.NetworkMgmtCmd.NetworkStatus// Network Status
 var joinTimer = 60// Amount of time for Zigbee devices to join
-var gateway_is_active = false;// Bool to hold Gateway CLI Tool status
+var gateway_is_active = false; // บูลเพื่อเก็บสถานะเครื่องมือ Gateway CLI
 
-// If missing, create JSON file to store Zigbee devices
+// ขัดให้สร้างกลุ่ม JSON เทียมอุปกรณ์ Zigbee
 if (!fs.existsSync('./devices.json')){
   fs.writeFileSync('./devices.json', JSON.stringify({}, null, 2) , 'utf-8');
   console.log('Creating .json file to store Zigbee devices.');
@@ -32,7 +33,7 @@ var zigbeeDevices = JSON.parse(fs.readFileSync('./devices.json')); // Holds regi
 // Store device count 
 var deviceCount = Object.keys(zigbeeDevices).length;
 
-// Create driver configuration for Zigbee network
+// สร้างการกำหนดค่าไดรเวอร์สำหรับเครือข่าย Zigbee
 var zb_network_msg = matrix_io.malos.v1.driver.DriverConfig.create({
   // Create Zigbee message
   zigbeeMessage: matrix_io.malos.v1.comm.ZigBeeMsg.create({
