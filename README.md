@@ -1,14 +1,14 @@
-# --- [za_settings.txt] ( https://probot.github.io/ )
+#[za_settings.txt] ( https://probot.github.io/ )
 
 ￼
-เ
+
 >
 
 
 
 
 
-"For handling zigbee lights
+>["For handling zigbee lights
 #zigbee_registration_backup.js"
 /////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Set Initial Variables \\
@@ -21,7 +21,7 @@ var networkCommands = matrix_io.malos.v1.comm.ZigBeeMsg.NetworkMgmtCmd.NetworkMg
 var networkStatuses = matrix_io.malos.v1.comm.ZigBeeMsg.NetworkMgmtCmd.NetworkStatus// Network Status
 var joinTimer = 60// Amount of time for Zigbee devices to join
 var gateway_is_active = false; // บูลเพื่อเก็บสถานะเครื่องมือ Gateway CLI
-
+"
 // ขัดให้สร้างกลุ่ม JSON เทียมอุปกรณ์ Zigbee
 if (!fs.existsSync('./devices.json')){
   fs.writeFileSync('./devices.json', JSON.stringify({}, null, 2) , 'utf-8');
@@ -423,40 +423,5 @@ var zb_toggle_msg = matrix_io.malos.v1.driver.DriverConfig.create({
       endpointIndex: zigbeeDevices[device].endpoint_index
     })
   })
-});
-    configSocket.send(matrix_io.malos.v1.driver.DriverConfig.encode(zb_toggle_msg).finish());
-  }
-
-
-
-  },2000);
-}
-@S-pegin
- 
-Add heading textAdd bold text, <Ctrl+b>Add italic text, <Ctrl+i>
-Add a quote, <Ctrl+Shift+.>Add code, <Ctrl+e>Add a link, <Ctrl+k>
-Add a bulleted list, <Ctrl+Shift+8>Add a numbered list, <Ctrl+Shift+7>Add a task list, <Ctrl+Shift+l>
-Directly mention a user or team
-Reference an issue or pull request
-Leave a comment
-ไม่ได้เลือกไฟล์ใด
-Attach files by dragging & dropping, selecting or pasting them.
-Styling with Markdown is supported
-Footer
-© 2022 GitHub, Inc.
-Footer navigation
-Terms
-Privacy
-Security
-Status
-Docs
-Contact GitHub
-Pricing
-API
-Training
-Blog
-About
-หน่วยงานกำกับดูแลไฟ zigbeezigbee.
-สถานะวิ่งคิว
-
-{ "avgStepBuildTime" : 64.9566, "avgStepTime" : 94.4354, "buildReadTimeAvgMs" : 456.574, "buildReadTimeMs" : 2047729724, "bytesReceived" : 40958754227093, "bytesSent" : 1189537]
+">
+    
